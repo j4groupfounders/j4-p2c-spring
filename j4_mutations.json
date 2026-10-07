@@ -1,0 +1,32 @@
+[
+  [
+    "owner-search-maxlength",
+    "src/main/resources/templates/owners/findOwners.html",
+    "maxlength=\"80\"",
+    "maxlength=\"1\""
+  ],
+  [
+    "owner-search-action",
+    "src/main/resources/templates/owners/findOwners.html",
+    "th:action=\"@{/owners}\"",
+    "th:action=\"@{/vets.html}\""
+  ],
+  [
+    "new-owner-navigation",
+    "src/main/resources/templates/owners/findOwners.html",
+    "th:href=\"@{/owners/new}\"",
+    "th:href=\"@{/owners/find}\""
+  ],
+  [
+    "veterinarian-name",
+    "src/main/resources/templates/vets/vetList.html",
+    "${vet.firstName + ' ' + vet.lastName}",
+    "${vet.firstName}"
+  ],
+  [
+    "specialties-hidden",
+    "src/main/resources/templates/vets/vetList.html",
+    "th:text=\"${specialty.name + ' '}\"",
+    "th:text=\"'none'\""
+  ]
+]
