@@ -17,9 +17,9 @@ jobs:
       - name: Project tests and package
         run: ./mvnw -B package -Dspring-javaformat.skip=true
       - name: Boot and characterize
-        run: |
-          java -jar target/*.jar --server.port=3000 > boot.log 2>&1 &
-          python3 j4_probe.py
+        run: python3 j4_stage.py
+      - name: Independent seeded faults
+        run: python3 j4_seeds.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -30,5 +30,7 @@ jobs:
             target/surefire-reports/*.xml
             boot.log
             seed-results.json
+            seed-evidence/
+            http-evidence/
             yarn.lock
           retention-days: 30
